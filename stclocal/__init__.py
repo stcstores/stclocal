@@ -12,6 +12,7 @@ class FTPLogin:
 HOME = os.environ['STCLOCAL']
 IMPORT_DIR = os.path.join(HOME, 'import')
 DOWNLOAD_DIR = os.path.join(HOME, 'download')
+BACKUP_DIR = os.path.join(HOME, 'backup')
 EXPORT_DIR = os.path.join(HOME, 'export')
 INVENTORY_FILE_NAME = 'linnworks_inventory.csv'
 LINKING_FILE_NAME = 'linnworks_linking.csv'
@@ -22,7 +23,7 @@ directories = [IMPORT_DIR, DOWNLOAD_DIR, EXPORT_DIR]
 config_path = os.path.join(HOME, 'config.json')
 with open(config_path, 'r') as config_file:
     config = json.load(config_file)
-BACKUP_DIRS = config['BACKUP_DIRECTORIES']
+BACKUP_DIRS = [BACKUP_DIR] + config['BACKUP_DIRECTORIES']
 FTP_BACKUPS = [
     FTPLogin(login['HOST'], login['USER'], login['PASSWD'])
     for login in config['FTP_BACKUPS']]
