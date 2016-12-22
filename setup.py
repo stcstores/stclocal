@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='stclocal',
-    version='1.0',
+    version='1.1',
     description='Manager for local files in STC Stores',
     packages=find_packages(),
     install_requires=[])
