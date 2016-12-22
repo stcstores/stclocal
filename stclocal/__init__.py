@@ -1,5 +1,6 @@
 import os
 import json
+from pylinnworks import PyLinnworks
 
 
 class FTPBackup:
@@ -31,3 +32,4 @@ BACKUP_DIRS = [BACKUP_DIR] + config['BACKUP_DIRECTORIES']
 FTP_BACKUPS = [
     FTPBackup(login['HOST'], login['USER'], login['PASSWD'], login['PATH'])
     for login in config['FTP_BACKUPS']]
+PyLinnworks.connect(config=config['LINNWORKS_LOGIN'])
