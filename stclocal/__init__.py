@@ -11,7 +11,7 @@ class FTPBackup:
         self.path = path
 
     def __repr__(self):
-        return ''.join([self.host, '@', self.host, '/', self.path])
+        return ''.join([self.user, '@', self.host, '/', self.path])
 
 
 HOME = os.environ['STCLOCAL']
