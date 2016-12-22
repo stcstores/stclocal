@@ -2,11 +2,15 @@ import os
 import json
 
 
-class FTPLogin:
-    def __init__(self, host, user, password):
+class FTPBackup:
+    def __init__(self, host, user, password, path):
         self.host = host
         self.user = user
         self.password = password
+        self.path = path
+
+    def __repr__(self):
+        return ''.join([self.host, '@', self.host, '/', self.path])
 
 
 HOME = os.environ['STCLOCAL']
@@ -25,5 +29,5 @@ with open(config_path, 'r') as config_file:
     config = json.load(config_file)
 BACKUP_DIRS = [BACKUP_DIR] + config['BACKUP_DIRECTORIES']
 FTP_BACKUPS = [
-    FTPLogin(login['HOST'], login['USER'], login['PASSWD'])
+    FTPBackup(login['HOST'], login['USER'], login['PASSWD'], login['PATH'])
     for login in config['FTP_BACKUPS']]
