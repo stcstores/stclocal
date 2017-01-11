@@ -3,15 +3,9 @@ import json
 import pylinnworks
 
 
-class FTPBackup:
-    def __init__(self, host, user, password, path):
-        self.host = host
-        self.user = user
-        self.password = password
-        self.path = path
-
-    def __repr__(self):
-        return ''.join([self.user, '@', self.host, '/', self.path])
+from . ftpbackup import FTPBackup
+from . channel_lookup import source_lookup, sub_source_lookup
+from . exceptions import ChannelNotFound
 
 
 HOME = os.environ['STCLOCAL']
