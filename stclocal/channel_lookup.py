@@ -1,8 +1,11 @@
+from . exceptions import ChannelNotFound
+
 class LookUp:
 
     def __init__(self, name, matches):
         self.name = name
         self.matches = [string.lower() for string in matches]
+        self.matches.append(self.name.lower())
 
     def check_match(self, string):
         if string.lower() in self.matches:
@@ -19,6 +22,7 @@ def source_lookup(string):
     for source in sources:
         if source.check_match(string):
             return source.name
+    raise ChannelNotFound(string)
 
 
 def sub_source_lookup(string):
@@ -48,3 +52,4 @@ def sub_source_lookup(string):
     for sub_source in sub_sources:
         if sub_source.check_match(string):
             return sub_source.name
+    raise ChannelNotFound(string)
