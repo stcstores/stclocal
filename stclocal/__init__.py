@@ -17,7 +17,8 @@ INVENTORY_FILE_NAME = 'linnworks_inventory.csv'
 LINKING_FILE_NAME = 'linnworks_linking.csv'
 SHOPIFY_PRODUCT_FILE_NAME = "products_export.zip"
 SHOPIFY_THEME_FILE_NAME = "www-stcstores-co-uk-stcstores.zip"
-directories = [IMPORT_DIR, DOWNLOAD_DIR, EXPORT_DIR]
+LOG_DIR = 'logs'
+directories = [IMPORT_DIR, DOWNLOAD_DIR, EXPORT_DIR, LOG_DIR]
 
 config_path = os.path.join(HOME, 'config.json')
 with open(config_path, 'r') as config_file:
