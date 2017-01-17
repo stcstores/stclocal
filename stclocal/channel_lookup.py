@@ -39,10 +39,10 @@ def sub_source_lookup(string):
             'amazon.it', 'amazon italy', 'amazon it')),
         LookUp('STC Stores Spain', (
             'amazon.es', 'amazon spain', 'amazon es')),
-        LookUp('STC Stores USA', (
+        LookUp('Stc Stores USA', (
             'amazon.com', 'amazon usa', 'amazon america', 'amazon.com',
             'amazon us')),
-        LookUp('STC Stores Canada', (
+        LookUp('Stc Stores Canada', (
             'amazon.ca', 'amazon canada', 'amazon ca')),
         LookUp('STC Stores Mexico', (
             'amazon.com.mx', 'amazon mexico', 'amazon mx')),
