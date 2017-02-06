@@ -3,11 +3,6 @@ import json
 import pylinnworks
 
 
-from . ftpbackup import FTPBackup
-from . channel_lookup import source_lookup, sub_source_lookup
-from . exceptions import ChannelNotFound
-
-
 HOME = os.environ['STCLOCAL']
 IMPORT_DIR = os.path.join(HOME, 'import')
 DOWNLOAD_DIR = os.path.join(HOME, 'download')
@@ -24,7 +19,10 @@ config_path = os.path.join(HOME, 'config.json')
 with open(config_path, 'r') as config_file:
     config = json.load(config_file)
 BACKUP_DIRS = [BACKUP_DIR] + config['BACKUP_DIRECTORIES']
+
+"""
 FTP_BACKUPS = [
     FTPBackup(login['HOST'], login['USER'], login['PASSWD'], login['PATH'])
     for login in config['FTP_BACKUPS']]
+"""
 pylinnworks.PyLinnworks.connect(config=config['LINNWORKS_LOGIN'])
