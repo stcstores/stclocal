@@ -26,3 +26,4 @@ FTP_BACKUPS = [
     for login in config['FTP_BACKUPS']]
 """
 pylinnworks.PyLinnworks.connect(config=config['LINNWORKS_LOGIN'])
+PyLinnworks = pylinnworks.PyLinnworks
