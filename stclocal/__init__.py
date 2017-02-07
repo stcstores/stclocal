@@ -2,6 +2,8 @@ import os
 import json
 import pylinnworks
 
+from .ftpbackup import FTPBackup
+
 
 HOME = os.environ['STCLOCAL']
 IMPORT_DIR = os.path.join(HOME, 'import')
@@ -20,10 +22,9 @@ with open(config_path, 'r') as config_file:
     config = json.load(config_file)
 BACKUP_DIRS = [BACKUP_DIR] + config['BACKUP_DIRECTORIES']
 
-"""
 FTP_BACKUPS = [
     FTPBackup(login['HOST'], login['USER'], login['PASSWD'], login['PATH'])
     for login in config['FTP_BACKUPS']]
-"""
+
 pylinnworks.PyLinnworks.connect(config=config['LINNWORKS_LOGIN'])
 PyLinnworks = pylinnworks.PyLinnworks
